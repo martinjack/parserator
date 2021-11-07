@@ -20,7 +20,7 @@ setup(
     version='0.6.9',
     url='https://github.com/martinjack/parserator',
     description='Create parsers',
-    name='parserator',
+    name='jackmartin.parserator',
     packages=['parserator'],
     install_requires=reqs,
     classifiers=[
@@ -37,9 +37,4 @@ setup(
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Topic :: Scientific/Engineering',
         'Topic :: Scientific/Engineering :: Information Analysis'],
-    entry_points={
-        'console_scripts': [
-            'parserator = parserator.main:dispatch',
-        ]
-    }
 )
