@@ -38,6 +38,11 @@ def dispatch():
     sub_label.add_argument(dest='module',
                            help='parser module name',
                            type=python_module)
+    sub_label.add_argument('--modelfile',
+                           dest='model_path',
+                           help='location of model file',
+                           action=ModelFile,
+                           required=False)
     sub_label.set_defaults(func=label)
 
     # Arguments for train command
@@ -212,10 +217,11 @@ def training_data(arg):
 class ModelFile(argparse.Action):
     def __call__(self, parser, namespace, model_file, option_string):
         module = namespace.module
+        model_path = ''
 
         if hasattr(module, 'MODEL_FILES'):
             try:
-                model_path = module.__name__ + '/'  +module.MODEL_FILES[model_file]
+                model_path = model_file
             except KeyError:
                 msg = """
                       Invalid --modelfile argument

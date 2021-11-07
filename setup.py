@@ -17,12 +17,11 @@ if sys.version < '3':
 
 
 setup(
-    version='0.6.8',
-    url='https://github.com/datamade/parserator',
+    version='0.6.9',
+    url='https://github.com/martinjack/parserator',
     description='Create parsers',
     name='parserator',
     packages=['parserator'],
-    license='The MIT License: http://www.opensource.org/licenses/mit-license.php',
     install_requires=reqs,
     classifiers=[
         'Development Status :: 3 - Alpha',
