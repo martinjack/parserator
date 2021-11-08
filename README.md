@@ -2,9 +2,18 @@ parserator
 ==========
 A toolkit for making domain-specific probabilistic parsers
 
-[![Build Status](https://travis-ci.org/datamade/parserator.svg?branch=master)](https://travis-ci.org/datamade/parserator)
+[![PyPI version](https://badge.fury.io/py/jackmartin.parserator.svg)](https://badge.fury.io/py/jackmartin.parserator)
 
 Do you have domain-specific text data that would be much more useful if you could derive structure from the strings? This toolkit will help you create a custom NLP model that learns from patterns in real data and then uses that knowledge to process new strings automatically. All you need is some training data to teach your parser about its domain.
+
+# Install
+```shell
+pip3 install jackmartin.parserator
+```
+# Install local
+```shell
+pip3 install setup.py --user
+```
 
 ## What does probabilistic parser do?
 Given a string, a probabilistic parser will break it out into labeled components. The parser uses [conditional random fields](http://en.wikipedia.org/wiki/Conditional_random_field) to label components based on (1) features of the component string and (2) the order of labels.
