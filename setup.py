@@ -17,7 +17,7 @@ if sys.version < '3':
 
 
 setup(
-    version='0.6.9',
+    version='0.7.0',
     url='https://github.com/martinjack/parserator',
     description='Create parsers',
     name='jackmartin.parserator',
@@ -37,4 +37,9 @@ setup(
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Topic :: Scientific/Engineering',
         'Topic :: Scientific/Engineering :: Information Analysis'],
+    entry_points={
+        'console_scripts': [
+            'parserator = parserator.main:dispatch',
+        ]
+    }
 )

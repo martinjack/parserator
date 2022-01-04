@@ -42,10 +42,10 @@ def renameModelFile(old_model):
         print(textwrap.dedent(msg % (old_model, new_name)))
         os.rename(old_model, new_name)
 
+def train(module, training_data, model_path, backup):
 
-def train(module, training_data, model_path) :
-
-    renameModelFile(model_path)
+    if backup is True:
+        renameModelFile(model_path)
 
     trainModel(training_data, module, model_path)
 

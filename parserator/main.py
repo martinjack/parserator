@@ -43,6 +43,11 @@ def dispatch():
                            help='location of model file',
                            action=ModelFile,
                            required=False)
+    sub_label.add_argument('--backup', 
+                            dest='backup',
+                            help='backup model',
+                            default=True,
+                            required=False)
     sub_label.set_defaults(func=label)
 
     # Arguments for train command
@@ -58,6 +63,11 @@ def dispatch():
                            help='location of model file',
                            action=ModelFile,
                            required=False)
+    sub_train.add_argument('--backup', 
+                            dest='backup',
+                            help='backup model',
+                            default=True,
+                            required=False)
     sub_train.set_defaults(func=train)
 
     # Arguments for init command
@@ -83,6 +93,7 @@ def train(args) :
     training_data = args.traindata
     module = args.module
     model_path = args.model_path
+    backup = args.backup
 
     if model_path is None:
         model_path = module.__name__ + '/' +module.MODEL_FILE
@@ -96,7 +107,7 @@ def train(args) :
                 print("  - %s" % m)
             print("Since no model was specified, we will train the default model")
 
-    training.train(module, training_data, model_path)
+    training.train(module, training_data, model_path, backup)
 
 
 def init(args) :
